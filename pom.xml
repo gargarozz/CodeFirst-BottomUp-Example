@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>tutws</groupId>
-	<artifactId>tutws</artifactId>
+	<groupId>imolinfo</groupId>
+	<artifactId>CodeFirst-BottomUp-Example</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging> war</packaging>
+	<packaging>war</packaging>
 	<dependencies>
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
@@ -15,14 +15,6 @@
 
 	<build>
 		<plugins>
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.6</version>
-				<configuration>
-					<webXml>/WEB-INF/web.xml</webXml>
-				</configuration>
-			</plugin> -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>jaxws-maven-plugin</artifactId>
@@ -39,10 +31,19 @@
 							<genWsdl>true</genWsdl>
 						</configuration>
 					</execution>
-					</executions>
+				</executions>
 			</plugin>
+                        <plugin>
+                            <groupId>external.atlassian.jgitflow</groupId>
+                            <artifactId>jgitflow-maven-plugin</artifactId>
+                            <version>1.0-m5.1</version>
+                            <configuration>
+                                <noDeploy>true</noDeploy>
+                            </configuration>
+                        </plugin>
+
 		</plugins>
 
 	</build>
 
-	</project>
+</project>
